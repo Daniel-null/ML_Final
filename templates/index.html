@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <form action = "/all" method = "post">
+        <p>please put your name below</p>
+        <p><input type = "text" name = "user" /></p>
+        <p><input type = "submit" value = "submit" /></p>
+    </form>
+</head>
+<body> 
+    <div id="userInfo">
+        <h2> Score Board</h2>
+        <div>
+            <!-- FOR THE FUTURE, when the game is done, we should organize the score by highest to lowest-->
+            {% for score in scores %}
+                <h3> 
+                    {{score["user"]}} {{score["score"]}} {{score["date"]}}
+                </h3> 
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
